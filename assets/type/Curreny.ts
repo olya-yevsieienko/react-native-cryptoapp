@@ -3,7 +3,7 @@ export interface Currensy {
   currency: string;
   code: string;
   image: any;
-  amount: string;
+  amount: string | null;
   changes: string;
   type: string;
   description: string;

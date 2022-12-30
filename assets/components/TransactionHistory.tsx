@@ -63,7 +63,7 @@ const renderItem: React.FC<PropsItem> = ({item}) => {
         </Text>
         <Image
           source={require('../icons/right.png')}
-          style={{tintColor: COLORS.GREY}}
+          style={{tintColor: COLORS.GRAY}}
         />
       </View>
     </TouchableOpacity>
@@ -95,6 +95,7 @@ export const History: React.FC<Props> = ({history}) => {
 
 const styles = StyleSheet.create({
   wrap: {
+    marginHorizontal: 10,
     paddingTop: 16,
     paddingHorizontal: 20,
     borderRadius: 24,

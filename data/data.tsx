@@ -1,6 +1,7 @@
 import {Currensy} from '../assets/type/Curreny';
+import {Portfolio} from '../assets/type/Portfolio';
 
-export const portfolio = {
+export let portfolio: Portfolio = {
   balance: '24,724.33',
   changes: '+2.36%',
 };
@@ -118,7 +119,7 @@ export const trendingCurrencies: Currensy[] = [
       {x: 1, y: 2},
       {x: 1.5, y: 2.3},
       {x: 2, y: 2},
-      {x: 2.5, y: 2.2},
+      {x: 2.5, y: 2.4},
       {x: 3, y: 1.5},
       {x: 3.5, y: 2.1},
       {x: 4, y: 2.5},
@@ -131,7 +132,7 @@ export const trendingCurrencies: Currensy[] = [
       {
         id: 1,
         description: 'Sold Ethereum',
-        amount: -2.0034,
+        amount: -2.0074,
         currency: 'ETH',
         type: 'S', // S - Sold, B - Bought
         date: '14:20 12 Apr',
@@ -155,7 +156,7 @@ export const trendingCurrencies: Currensy[] = [
       {
         id: 4,
         description: 'Bought Ethereum',
-        amount: 2.0034,
+        amount: 1.034,
         currency: 'ETH',
         type: 'B',
         date: '14:20 12 Apr',
@@ -163,7 +164,7 @@ export const trendingCurrencies: Currensy[] = [
       {
         id: 5,
         description: 'Bought Ethereum',
-        amount: 2.0034,
+        amount: 22.0034,
         currency: 'ETH',
         type: 'B',
         date: '14:20 12 Apr',
@@ -262,7 +263,7 @@ export const trendingCurrencies: Currensy[] = [
       {
         id: 5,
         description: 'Bought Litecoin',
-        amount: 2.0034,
+        amount: 2.04,
         currency: 'LTC',
         type: 'B',
         date: '14:20 12 Apr',
@@ -286,7 +287,7 @@ export const trendingCurrencies: Currensy[] = [
       {
         id: 8,
         description: 'Bought Litecoin',
-        amount: 2.0034,
+        amount: 2.34,
         currency: 'LTC',
         type: 'B',
         date: '14:20 12 Apr',
