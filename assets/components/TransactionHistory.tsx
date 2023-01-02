@@ -95,7 +95,6 @@ export const History: React.FC<Props> = ({history}) => {
 
 const styles = StyleSheet.create({
   wrap: {
-    marginHorizontal: 10,
     paddingTop: 16,
     paddingHorizontal: 20,
     borderRadius: 24,
@@ -113,7 +112,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    borderBottomColor: COLORS.GREY,
+    borderBottomColor: COLORS.GRAY,
     borderBottomWidth: 1,
   },
 });

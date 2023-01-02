@@ -2,7 +2,6 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {FONTS_body, FONTS_title} from '../styles/styles';
-import {COLORS} from '../styles/theme';
 
 type Props = {
   icon: any;

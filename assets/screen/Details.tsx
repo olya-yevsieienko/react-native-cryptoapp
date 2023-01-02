@@ -17,7 +17,7 @@ import {CustomButton} from '../ui/CustomButton';
 import {ModalBuySell} from '../ui/ModalBuySell';
 
 type Props = {
-  route: any;
+  route?: any;
   navigation: any;
 };
 
@@ -27,9 +27,9 @@ export const Details: React.FC<Props> = ({route, navigation}) => {
   const [modalName, setModalName] = useState('');
 
   useEffect(() => {
-    const {currency} = route.params;
+    const {currency} = route?.params;
     setSelectedCurrency(currency);
-  }, [route.params]);
+  }, [route, route.params]);
 
   const handleModal = () => {
     setIsModalVisible(!isModalVisible);

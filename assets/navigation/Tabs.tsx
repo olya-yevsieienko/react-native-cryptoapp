@@ -93,20 +93,6 @@ export const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="Transaction"
-        component={Transaction}
-        options={{
-          tabBarIcon: () => (
-            <Image
-              source={require('../icons/transaction.png')}
-              resizeMode="contain"
-              style={{width: 50, height: 50, tintColor: COLORS.WHITE}}
-            />
-          ),
-          tabBarButton: props => <TabBarButtom {...props} />,
-        }}
-      />
-      <Tab.Screen
         name="Details"
         component={Details}
         options={{

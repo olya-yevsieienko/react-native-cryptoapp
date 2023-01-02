@@ -70,7 +70,7 @@ export const Trending = () => {
     <View style={styles.wrap}>
       <Text style={{...styles.trendingText, ...styles.text}}>Trending</Text>
       <FlatList
-        data={trending}
+        data={trending.slice(0, 4)}
         renderItem={renderItem}
         keyExtractor={item => `${item.id}`}
         horizontal

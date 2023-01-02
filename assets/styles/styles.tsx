@@ -18,3 +18,9 @@ export const FONTS_body = {
   fontFamily: 'montserrat_regular',
   color: COLORS.BLACK,
 };
+
+export const STYLE_app_container = {
+  marginHorizontal: 12,
+  marginBottom: 50,
+  marginTop: 10,
+};

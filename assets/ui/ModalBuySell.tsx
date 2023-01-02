@@ -71,7 +71,7 @@ export const ModalBuySell: React.FC<Props> = ({
         <TextInput
           style={{...styles.input, ...FONTS_body}}
           keyboardType="number-pad"
-          placeholder={'0.0000'}
+          placeholder={'0'}
           onChangeText={setCurrencyBuy}
           value={currencyBuy}
         />
@@ -90,7 +90,7 @@ export const ModalBuySell: React.FC<Props> = ({
         <TextInput
           style={{...styles.input, ...FONTS_body}}
           keyboardType="number-pad"
-          placeholder={'0.0000'}
+          placeholder={'0'}
           onChangeText={setCurrencySell}
           value={currencySell}
           editable={false}
@@ -106,7 +106,7 @@ export const ModalBuySell: React.FC<Props> = ({
         <TextInput
           style={{...styles.input, ...FONTS_body}}
           keyboardType="number-pad"
-          placeholder={'0.0000'}
+          placeholder={'0'}
           onChangeText={setCurrencySell}
           value={currencySell}
         />
@@ -124,7 +124,7 @@ export const ModalBuySell: React.FC<Props> = ({
         </View>
         <TextInput
           style={{...styles.input, ...FONTS_body}}
-          placeholder={'0.0000'}
+          placeholder={'0'}
           onChangeText={setCurrencyBuy}
           value={currencyBuy}
           editable={false}
