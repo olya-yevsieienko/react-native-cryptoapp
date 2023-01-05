@@ -7,31 +7,9 @@ import {Market} from '../screen/Market';
 import {Profile} from '../screen/Profile';
 import {SIZE} from '../styles/size';
 import {Details} from '../screen/Details';
-import LinearGradient from 'react-native-linear-gradient';
 import {COLORS} from '../styles/theme';
-import {Transaction} from '../screen/Transaction';
 
 const Tab = createBottomTabNavigator();
-
-type PropsButton = {
-  children: string;
-  onPress: () => void;
-};
-
-const TabBarButtom: React.FC<PropsButton> = ({children, onPress}) => {
-  return (
-    <TouchableOpacity
-      style={styles.buttonWrap}
-      onPress={onPress}
-      activeOpacity={0.8}>
-      <LinearGradient
-        colors={[COLORS.PRIMARY, COLORS.SECONDARY]}
-        style={styles.buttonBgr}>
-        {children}
-      </LinearGradient>
-    </TouchableOpacity>
-  );
-};
 
 export const Tabs = () => {
   return (

@@ -3,8 +3,13 @@ import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../styles/theme';
+import {FONTS_title} from '../styles/styles';
 
-export const HeaderBar = ({right}) => {
+type Props = {
+  right: boolean;
+};
+
+export const HeaderBar: React.FC<Props> = ({right}) => {
   const navigation = useNavigation();
 
   return (
@@ -18,14 +23,7 @@ export const HeaderBar = ({right}) => {
             resizeMode="contain"
             style={styles.iconBack}
           />
-          <Text
-            style={{
-              fontFamily: 'montserrat_regular',
-              fontSize: 18,
-              color: COLORS.BLACK,
-            }}>
-            Back
-          </Text>
+          <Text style={FONTS_title}>Back</Text>
         </TouchableOpacity>
       </View>
 
@@ -36,8 +34,8 @@ export const HeaderBar = ({right}) => {
               source={require('../icons/star.png')}
               resizeMode="contain"
               style={{
-                width: 30,
-                height: 30,
+                width: 24,
+                height: 24,
                 tintColor: COLORS.YELLOW,
               }}
             />
@@ -55,7 +53,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.LIGHT_GRAY,
   },
   iconBack: {
-    marginRight: 4,
+    marginRight: 12,
     width: 32,
   },
 });

@@ -10,12 +10,13 @@ export const SHADOW = {
 
 export const FONTS_title = {
   fontFamily: 'montserrat_bold',
-  fontSize: 18,
+  fontSize: 20,
   color: COLORS.BLACK,
 };
 
 export const FONTS_body = {
   fontFamily: 'montserrat_regular',
+  fontSize: 18,
   color: COLORS.BLACK,
 };
 

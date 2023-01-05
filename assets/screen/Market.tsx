@@ -9,7 +9,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import {FONTS_title, SHADOW} from '../styles/styles';
+import {FONTS_body, FONTS_title, SHADOW} from '../styles/styles';
 import {STYLE_app_container} from '../styles/styles';
 import {Currensy} from '../type/Curreny';
 import {trendingCurrencies} from '../../data/data';
@@ -39,7 +39,7 @@ export const Market = () => {
                       <Image source={item.image} />
                       <Text
                         style={{
-                          ...FONTS_title,
+                          ...FONTS_body,
                           ...{marginLeft: 20},
                         }}>{`${item.code}/BUSD`}</Text>
                     </View>
