@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React from 'react';
 import {Text, TouchableOpacity, View, Image, StyleSheet} from 'react-native';
 import {HeaderBar} from '../components/HeaderBar';
 import {
@@ -12,16 +12,10 @@ import {COLORS} from '../styles/theme';
 
 type Props = {
   route: any;
-  navigation: () => void;
 };
 
-export const UserSettings: React.FC<Props> = ({route, navigation}) => {
-  const {name, onChangeName} = route.params;
-  const [birthday, setBirthday] = useState('');
-
-  const handleChangeBirthday = (data: string): void => {
-    setBirthday(data);
-  };
+export const UserSettings: React.FC<Props> = ({route}) => {
+  const {userName} = route.params;
 
   return (
     <View>
@@ -47,7 +41,7 @@ export const UserSettings: React.FC<Props> = ({route, navigation}) => {
             style={{...styles.blockWrap, ...styles.itemSetting, ...SHADOW}}>
             <Text style={FONTS_body}>Display Name</Text>
             <View style={styles.blockWrap}>
-              <Text style={FONTS_body}>{name}</Text>
+              <Text style={FONTS_body}>{userName}</Text>
               <Image
                 source={require('../icons/right.png')}
                 style={styles.iconRight}
@@ -58,7 +52,7 @@ export const UserSettings: React.FC<Props> = ({route, navigation}) => {
             style={{...styles.blockWrap, ...styles.itemSetting, ...SHADOW}}>
             <Text style={FONTS_body}>User Name</Text>
             <View style={styles.blockWrap}>
-              <Text style={FONTS_body}>{name}</Text>
+              <Text style={FONTS_body}>{userName}</Text>
               <Image
                 source={require('../icons/right.png')}
                 style={styles.iconRight}
@@ -69,7 +63,6 @@ export const UserSettings: React.FC<Props> = ({route, navigation}) => {
             style={{...styles.blockWrap, ...styles.itemSetting, ...SHADOW}}>
             <Text style={FONTS_body}>Birthday</Text>
             <View style={styles.blockWrap}>
-              <Text style={FONTS_body}>{birthday}</Text>
               <Image
                 source={require('../icons/right.png')}
                 style={styles.iconRight}

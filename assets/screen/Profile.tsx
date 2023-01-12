@@ -8,26 +8,25 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import {FONTS_body, FONTS_title, STYLE_app_container} from '../styles/styles';
+import {FONTS_body, FONTS_title, SHADOW} from '../styles/styles';
 import {COLORS} from '../styles/theme';
-import {UserSettings} from './UserSettings';
 
 export const Profile = () => {
   const [userName, setUserName] = useState('User198459');
   const navigation = useNavigation();
 
-  const handleChangeUserName = ({name}) => {
+  const handleChangeUserName = (name: string): void => {
     setUserName(name);
   };
 
   return (
     <ScrollView>
-      <View style={STYLE_app_container}>
-        <View style={styles.userWrap}>
+      <View style={styles.profileContainer}>
+        <View style={{...styles.userWrap, ...SHADOW}}>
           <TouchableOpacity
             onPress={() =>
               navigation.navigate('UserSettings', {
-                name: userName,
+                userName: userName,
                 onChangeName: handleChangeUserName,
               })
             }>
@@ -35,8 +34,14 @@ export const Profile = () => {
               source={require('../images/user.png')}
               style={styles.userImage}
             />
+            <View style={styles.container}>
+              <Text style={FONTS_title}>{`Hi, ${userName}`}</Text>
+              <Image
+                source={require('../icons/right.png')}
+                style={styles.icon}
+              />
+            </View>
           </TouchableOpacity>
-          <Text style={FONTS_title}>{`Hi, ${userName}`}</Text>
         </View>
         <View>
           <TouchableOpacity>
@@ -61,7 +66,7 @@ export const Profile = () => {
           <TouchableOpacity>
             <View style={styles.container}>
               <Image
-                source={require('../icons/settings.png')}
+                source={require('../icons/about.png')}
                 style={styles.icon}
               />
               <Text style={FONTS_body}>About Us</Text>
@@ -74,15 +79,21 @@ export const Profile = () => {
 };
 
 const styles = StyleSheet.create({
-  userImage: {
+  profileContainer: {
     marginTop: 20,
-    marginBottom: 16,
-    width: 184,
-    height: 184,
+    marginBottom: 20,
+    marginHorizontal: 30,
   },
   userWrap: {
-    marginBottom: 24,
+    marginBottom: 10,
+    paddingVertical: 20,
     alignItems: 'center',
+    backgroundColor: COLORS.WHITE,
+    borderRadius: 20,
+  },
+  userImage: {
+    width: 184,
+    height: 184,
   },
   icon: {
     marginRight: 8,
@@ -91,8 +102,9 @@ const styles = StyleSheet.create({
     tintColor: COLORS.BLACK,
   },
   container: {
+    marginTop: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    height: 34,
+    height: 40,
   },
 });

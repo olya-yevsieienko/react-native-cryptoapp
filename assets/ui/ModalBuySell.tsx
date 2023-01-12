@@ -5,6 +5,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  Keyboard,
 } from 'react-native';
 import Modal from 'react-native-modal';
 import {FONTS_body, FONTS_title} from '../styles/styles';

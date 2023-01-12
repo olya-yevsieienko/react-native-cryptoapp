@@ -17,16 +17,11 @@ import {COLORS} from '../styles/theme';
 import {CustomButton} from '../ui/CustomButton';
 
 export const Market = () => {
-  const [currencies, setCurrencies] = useState<Currensy[]>(trendingCurrencies);
-  // const [search, setSearch] = useState('');
+  const [currencies] = useState<Currensy[]>(trendingCurrencies);
   const navigation = useNavigation();
 
-  // const updateSearch = (text: string) => {
-  //   setSearch(text);
-  // };
-
   return (
-    <ScrollView>
+    <ScrollView style={{marginBottom: 30}}>
       <View style={{...STYLE_app_container, ...styles.container}}>
         <View>
           <Text style={{...FONTS_title, ...styles.title}}>Popular Pairs</Text>

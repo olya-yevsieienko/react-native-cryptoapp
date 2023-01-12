@@ -1,6 +1,5 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home} from '../screen/Home';
 import {Market} from '../screen/Market';
@@ -123,18 +122,6 @@ export const Tabs = () => {
 };
 
 const styles = StyleSheet.create({
-  buttonWrap: {
-    top: -20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderBottomWidth: 0,
-    borderRadius: 35,
-    elevation: 8,
-    shadowOpacity: 0.8,
-    shadowRadius: 8,
-    shadowOffset: {width: 2, height: 2},
-    shadowColor: COLORS.BLACK,
-  },
   buttonBgr: {
     width: 70,
     height: 70,
@@ -147,6 +134,7 @@ const styles = StyleSheet.create({
   tabBarScreen: {
     justifyContent: 'center',
     alignItems: 'center',
+    width: 120,
   },
   tabBarScreenText: {
     fontSize: 14,
