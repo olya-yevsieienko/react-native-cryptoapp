@@ -14,7 +14,7 @@ import {RootStackParamsList} from '../type/Navigation';
 
 type Props = NativeStackScreenProps<RootStackParamsList, 'UserSettings'>;
 
-export const UserSettings = ({route}: Props) => {
+export const UserSettings = ({route, navigation}: Props) => {
   const {userName} = route.params;
 
   return (
