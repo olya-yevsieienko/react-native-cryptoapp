@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
-import {View, StyleSheet, ScrollView, Text} from 'react-native';
+import {View, StyleSheet, ScrollView, Text, Image} from 'react-native';
 import {CurrencyLabel} from '../components/CurrencyLabel';
 import {HeaderBar} from '../components/HeaderBar';
 import {FONTS_body, FONTS_title, SHADOW} from '../styles/styles';
@@ -188,6 +188,11 @@ export const Details = ({route, navigation}: Props) => {
               width={'50%'}
               onPress={() => navigation.navigate('Market')}
             />
+            <Image
+              source={require('../images/details.png')}
+              style={styles.detailsBgr}
+              resizeMode="contain"
+            />
           </View>
         )}
       </ScrollView>
@@ -212,8 +217,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   detailsWrapWithoutCur: {
-    marginTop: 80,
+    marginTop: 100,
+    justifyContent: 'center',
     alignItems: 'center',
+  },
+  detailsBgr: {
+    marginTop: 20,
+    height: 200,
+    width: 350,
+    tintColor: COLORS.GRAY,
   },
   chartWrap: {
     marginVertical: 12,
