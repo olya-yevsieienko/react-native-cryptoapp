@@ -5,7 +5,6 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  Keyboard,
 } from 'react-native';
 import Modal from 'react-native-modal';
 import {FONTS_body, FONTS_title} from '../styles/styles';
@@ -32,7 +31,7 @@ export const ModalBuySell: React.FC<Props> = ({
   const getCurrencyAmount = (currency: Currensy) => {
     let currencyAmount;
 
-    if (currency !== null && currency.amount !== null) {
+    if (currency !== null) {
       currencyAmount = currency.amount.match(/\d/g).join('');
     }
 

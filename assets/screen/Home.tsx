@@ -8,7 +8,6 @@ import {
   Image,
   Text,
   LogBox,
-  Alert,
 } from 'react-native';
 import {transactionHistory} from '../../data/data';
 import {Header} from '../components/Header';

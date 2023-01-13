@@ -5,8 +5,11 @@ import {Tabs} from './assets/navigation/Tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Home} from './assets/screen/Home';
 import {UserSettings} from './assets/screen/UserSettings';
+import {Details} from './assets/screen/Details';
+import {RootStackParamsList} from './assets/type/Navigation';
+import {Market} from './assets/screen/Market';
 
-const Stack = createNativeStackNavigator();
+const RootStack = createNativeStackNavigator<RootStackParamsList>();
 
 const App = () => {
   useEffect(() => {
@@ -15,11 +18,13 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name={'Tabs'} component={Tabs} />
-        <Stack.Screen name={'Home'} component={Home} />
-        <Stack.Screen name={'UserSettings'} component={UserSettings} />
-      </Stack.Navigator>
+      <RootStack.Navigator screenOptions={{headerShown: false}}>
+        <RootStack.Screen name={'Tabs'} component={Tabs} />
+        <RootStack.Screen name={'Home'} component={Home} />
+        <RootStack.Screen name={'UserSettings'} component={UserSettings} />
+        <RootStack.Screen name={'Details'} component={Details} />
+        <RootStack.Screen name={'Market'} component={Market} />
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 };

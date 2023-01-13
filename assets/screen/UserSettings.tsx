@@ -1,4 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import React from 'react';
 import {Text, TouchableOpacity, View, Image, StyleSheet} from 'react-native';
 import {HeaderBar} from '../components/HeaderBar';
@@ -9,12 +10,11 @@ import {
   STYLE_app_container,
 } from '../styles/styles';
 import {COLORS} from '../styles/theme';
+import {RootStackParamsList} from '../type/Navigation';
 
-type Props = {
-  route: any;
-};
+type Props = NativeStackScreenProps<RootStackParamsList, 'UserSettings'>;
 
-export const UserSettings: React.FC<Props> = ({route}) => {
+export const UserSettings = ({route}: Props) => {
   const {userName} = route.params;
 
   return (

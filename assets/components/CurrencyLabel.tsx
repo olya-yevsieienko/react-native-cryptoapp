@@ -5,8 +5,8 @@ import {FONTS_body, FONTS_title} from '../styles/styles';
 
 type Props = {
   icon: any;
-  currency: string;
-  code: string;
+  currency?: string;
+  code?: string;
 };
 
 export const CurrencyLabel: React.FC<Props> = ({icon, currency, code}) => {
