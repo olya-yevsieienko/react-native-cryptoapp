@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Modal from 'react-native-modal';
-import {FONTS_body, FONTS_title} from '../styles/styles';
+import {FONTS_body_1, FONTS_body_2, FONTS_title} from '../styles/styles';
 import {COLORS} from '../styles/theme';
 import {Currensy} from '../type/Curreny';
 import {CustomButton} from './CustomButton';
@@ -47,7 +47,7 @@ export const ModalBuySell: React.FC<Props> = ({
 
     if (modalName === 'Buy') {
       currencyInputValue = +currencyBuy * +currencyAmountInOneUsdt;
-      setCurrencySell(currencyInputValue.toFixed(8));
+      setCurrencySell(currencyInputValue.toString());
     } else {
       currencyInputValue = +currencySell * +selectedCurrencyAmount;
       setCurrencyBuy(currencyInputValue.toString());
@@ -69,26 +69,17 @@ export const ModalBuySell: React.FC<Props> = ({
     return (
       <View>
         <TextInput
-          style={{...styles.input, ...FONTS_body}}
+          style={{...styles.input, ...FONTS_body_1}}
           keyboardType="number-pad"
           placeholder={'0'}
           onChangeText={setCurrencyBuy}
           value={currencyBuy}
         />
-        <View style={styles.wrap}>
-          <Text style={FONTS_body}>
-            {`1 USDT = ${currencyAmountInOneUsdt} ${selectedCurrency?.code}`}
-          </Text>
-          <CustomButton
-            title={'Switch'}
-            bgrColor={COLORS.LIGHT_GRAY}
-            textColor={''}
-            width={'24%'}
-            onPress={() => console.log('switch')}
-          />
-        </View>
+        <Text style={FONTS_body_2}>
+          {`1 USDT = ${currencyAmountInOneUsdt} ${selectedCurrency?.code}`}
+        </Text>
         <TextInput
-          style={{...styles.input, ...FONTS_body}}
+          style={{...styles.input, ...FONTS_body_1}}
           keyboardType="number-pad"
           placeholder={'0'}
           onChangeText={setCurrencySell}
@@ -104,26 +95,17 @@ export const ModalBuySell: React.FC<Props> = ({
     return (
       <View>
         <TextInput
-          style={{...styles.input, ...FONTS_body}}
+          style={{...styles.input, ...FONTS_body_1}}
           keyboardType="number-pad"
           placeholder={'0'}
           onChangeText={setCurrencySell}
           value={currencySell}
         />
-        <View style={styles.wrap}>
-          <Text style={FONTS_body}>
-            {`1 ${selectedCurrency?.code} = ${selectedCurrency?.amount} USDT`}
-          </Text>
-          <CustomButton
-            title={'Switch'}
-            bgrColor={COLORS.LIGHT_GRAY}
-            textColor={''}
-            width={'24%'}
-            onPress={() => console.log('switch')}
-          />
-        </View>
+        <Text style={FONTS_body_2}>
+          {`1 ${selectedCurrency?.code} = ${selectedCurrency?.amount} USDT`}
+        </Text>
         <TextInput
-          style={{...styles.input, ...FONTS_body}}
+          style={{...styles.input, ...FONTS_body_1}}
           placeholder={'0'}
           onChangeText={setCurrencyBuy}
           value={currencyBuy}
@@ -137,7 +119,7 @@ export const ModalBuySell: React.FC<Props> = ({
   return (
     <Modal isVisible={isModalVisible}>
       <View style={styles.containerModal}>
-        <View style={{...styles.wrap, ...{marginBottom: 12}}}>
+        <View style={styles.wrap}>
           <Text style={FONTS_title}>{modalName}</Text>
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <Text style={FONTS_title}>X</Text>
@@ -150,7 +132,10 @@ export const ModalBuySell: React.FC<Props> = ({
             bgrColor={COLORS.YELLOW}
             textColor={COLORS.BLACK}
             width={'60%'}
-            onPress={handleExchange}
+            onPress={() => {
+              handleExchange();
+              onClose();
+            }}
           />
         </View>
       </View>
@@ -186,7 +171,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   input: {
-    marginVertical: 10,
+    marginVertical: 16,
     paddingHorizontal: 20,
     borderColor: COLORS.BLACK,
     borderWidth: 1,

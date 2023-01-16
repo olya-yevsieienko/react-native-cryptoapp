@@ -4,7 +4,7 @@ import React from 'react';
 import {Text, TouchableOpacity, View, Image, StyleSheet} from 'react-native';
 import {HeaderBar} from '../components/HeaderBar';
 import {
-  FONTS_body,
+  FONTS_body_1,
   FONTS_title,
   SHADOW,
   STYLE_app_container,
@@ -25,7 +25,7 @@ export const UserSettings = ({route, navigation}: Props) => {
         <View style={{marginBottom: 24}}>
           <TouchableOpacity
             style={{...styles.blockWrap, ...styles.itemSetting, ...SHADOW}}>
-            <Text style={FONTS_body}>Avatar</Text>
+            <Text style={FONTS_body_1}>Avatar</Text>
             <View style={styles.blockWrap}>
               <Image
                 source={require('../images/user.png')}
@@ -39,9 +39,9 @@ export const UserSettings = ({route, navigation}: Props) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={{...styles.blockWrap, ...styles.itemSetting, ...SHADOW}}>
-            <Text style={FONTS_body}>Display Name</Text>
+            <Text style={FONTS_body_1}>Display Name</Text>
             <View style={styles.blockWrap}>
-              <Text style={FONTS_body}>{userName}</Text>
+              <Text style={FONTS_body_1}>{userName}</Text>
               <Image
                 source={require('../icons/right.png')}
                 style={styles.iconRight}
@@ -50,9 +50,9 @@ export const UserSettings = ({route, navigation}: Props) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={{...styles.blockWrap, ...styles.itemSetting, ...SHADOW}}>
-            <Text style={FONTS_body}>User Name</Text>
+            <Text style={FONTS_body_1}>User Name</Text>
             <View style={styles.blockWrap}>
-              <Text style={FONTS_body}>{userName}</Text>
+              <Text style={FONTS_body_1}>{userName}</Text>
               <Image
                 source={require('../icons/right.png')}
                 style={styles.iconRight}
@@ -61,7 +61,7 @@ export const UserSettings = ({route, navigation}: Props) => {
           </TouchableOpacity>
           <TouchableOpacity
             style={{...styles.blockWrap, ...styles.itemSetting, ...SHADOW}}>
-            <Text style={FONTS_body}>Birthday</Text>
+            <Text style={FONTS_body_1}>Birthday</Text>
             <View style={styles.blockWrap}>
               <Image
                 source={require('../icons/right.png')}
@@ -75,7 +75,7 @@ export const UserSettings = ({route, navigation}: Props) => {
         </Text>
         <TouchableOpacity
           style={{...styles.blockWrap, ...styles.itemSetting, ...SHADOW}}>
-          <Text style={FONTS_body}>Update password</Text>
+          <Text style={FONTS_body_1}>Update password</Text>
           <Image
             source={require('../icons/right.png')}
             style={styles.iconRight}

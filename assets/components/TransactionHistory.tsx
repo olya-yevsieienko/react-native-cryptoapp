@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   FlatList,
@@ -8,7 +7,13 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {SHADOW} from '../styles/styles';
+import {SIZE} from '../styles/size';
+import {
+  FONTS_body_2,
+  FONTS_body_3,
+  FONTS_title,
+  SHADOW,
+} from '../styles/styles';
 import {COLORS} from '../styles/theme';
 import {TransactionHistory} from '../type/TransactionHistory';
 
@@ -22,42 +27,22 @@ const renderItem: React.FC<PropsItem> = ({item}) => {
       style={styles.renderItem}
       onPress={() => console.log(item)}
       activeOpacity={0.7}>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={styles.container}>
         <Image
           source={require('../icons/transactions.png')}
-          style={{
-            marginRight: 10,
-            width: 30,
-            height: 36,
-          }}
+          style={styles.icon}
         />
         <View>
-          <Text
-            style={{
-              marginBottom: 4,
-              fontFamily: 'montserrat_regular',
-              color: COLORS.BLACK,
-            }}>
-            {item.description}
-          </Text>
-          <Text
-            style={{
-              marginBottom: 12,
-              fontFamily: 'montserrat_regular',
-              fontSize: 12,
-            }}>
-            {item.date}
-          </Text>
+          <Text style={FONTS_body_2}>{item.description}</Text>
+          <Text style={FONTS_body_2}>{item.date}</Text>
         </View>
       </View>
 
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={styles.container}>
         <Text
           style={{
-            marginRight: 8,
-            fontFamily: 'montserrat_regular',
-            fontSize: 14,
-            color: item.type === 'B' ? COLORS.GREEN : COLORS.BLACK,
+            ...FONTS_body_2,
+            ...{color: item.type === 'B' ? COLORS.GREEN : COLORS.RED},
           }}>
           {item.amount} {item.currency}
         </Text>
@@ -77,13 +62,12 @@ type Props = {
 export const History: React.FC<Props> = ({history}) => {
   return (
     <View style={{...styles.wrap, ...SHADOW}}>
-      <Text style={styles.title}>Transaction History</Text>
+      <Text style={{...styles.title, ...FONTS_title}}>Transaction History</Text>
       <FlatList
         data={history}
         renderItem={renderItem}
         keyExtractor={item => `${item.id}`}
         showsVerticalScrollIndicator={false}
-        style={styles.flatList}
         scrollEnabled={false}
         ItemSeparatorComponent={() => {
           return <View />;
@@ -100,19 +84,24 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     backgroundColor: COLORS.WHITE,
   },
-  title: {
-    marginBottom: 16,
-    fontFamily: 'montserrat_bold',
-    fontSize: 16,
-    color: COLORS.BLACK,
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  flatList: {},
+  title: {
+    marginBottom: SIZE.MARGIN_BOTTOM_TITLE,
+  },
+  icon: {
+    marginRight: 8,
+    width: SIZE.ICON_SIZE,
+    height: SIZE.ICON_SIZE,
+  },
   renderItem: {
-    marginBottom: 12,
+    marginVertical: 12,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    borderBottomColor: COLORS.GRAY,
+    borderBottomColor: COLORS.LIGHT_GRAY,
     borderBottomWidth: 1,
   },
 });

@@ -8,7 +8,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import {FONTS_body, FONTS_title, SHADOW} from '../styles/styles';
+import {FONTS_body_1, FONTS_title, SHADOW} from '../styles/styles';
 import {COLORS} from '../styles/theme';
 
 export const Profile = () => {
@@ -50,7 +50,7 @@ export const Profile = () => {
                 source={require('../icons/settings.png')}
                 style={styles.icon}
               />
-              <Text style={FONTS_body}>Settings</Text>
+              <Text style={FONTS_body_1}>Settings</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -60,7 +60,7 @@ export const Profile = () => {
                 style={styles.icon}
                 resizeMode="contain"
               />
-              <Text style={FONTS_body}>Help Center</Text>
+              <Text style={FONTS_body_1}>Help Center</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -69,7 +69,7 @@ export const Profile = () => {
                 source={require('../icons/about.png')}
                 style={styles.icon}
               />
-              <Text style={FONTS_body}>About Us</Text>
+              <Text style={FONTS_body_1}>About Us</Text>
             </View>
           </TouchableOpacity>
         </View>

@@ -24,7 +24,7 @@ export const Header = () => {
 const styles = StyleSheet.create({
   headerWrap: {
     marginBottom: 78,
-    height: 230,
+    height: 240,
     width: '100%',
     backgroundColor: COLORS.PRIMARY,
     overflow: 'hidden',

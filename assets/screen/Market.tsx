@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {
@@ -9,32 +8,35 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import {FONTS_body, FONTS_title, SHADOW} from '../styles/styles';
+import {CURRENCY, FONTS_body_1, FONTS_title, SHADOW} from '../styles/styles';
 import {STYLE_app_container} from '../styles/styles';
 import {Currensy} from '../type/Curreny';
 import {trendingCurrencies} from '../../data/data';
 import {COLORS} from '../styles/theme';
 import {CustomButton} from '../ui/CustomButton';
+import {SIZE} from '../styles/size';
 
 export const Market = () => {
   const [currencies] = useState<Currensy[]>(trendingCurrencies);
   const navigation = useNavigation();
 
   return (
-    <ScrollView style={{marginBottom: 30}}>
-      <View style={{...STYLE_app_container, ...styles.container}}>
+    <ScrollView>
+      <View style={{...STYLE_app_container, ...styles.marketContainer}}>
         <View>
-          <Text style={{...FONTS_title, ...styles.title}}>Popular Pairs</Text>
+          <Text style={{...FONTS_title, ...styles.marketTitle}}>
+            Popular Pairs
+          </Text>
           <View>
             {currencies.map(item => (
               <TouchableOpacity key={item.id}>
                 <View style={{...styles.itemWrap, ...SHADOW}}>
                   <View style={styles.item}>
-                    <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                      <Image source={item.image} />
+                    <View style={styles.container}>
+                      <Image source={item.image} style={CURRENCY} />
                       <Text
                         style={{
-                          ...FONTS_body,
+                          ...FONTS_body_1,
                           ...{marginLeft: 20},
                         }}>{`${item.code}/BUSD`}</Text>
                     </View>
@@ -59,22 +61,25 @@ export const Market = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 50,
-    flex: 1,
+  marketContainer: {
+    marginTop: 32,
   },
-  title: {
-    marginBottom: 20,
+  marketTitle: {
+    marginBottom: 24,
     textAlign: 'center',
   },
   itemWrap: {
-    marginBottom: 10,
-    height: 68,
-    borderRadius: 20,
+    marginBottom: SIZE.MARGIN_BOTTOM_BLOCKS,
+    height: 64,
+    borderRadius: SIZE.BORDER_RADIUS,
     backgroundColor: COLORS.WHITE,
   },
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   item: {
-    marginHorizontal: 16,
+    marginHorizontal: 20,
     marginVertical: 10,
     flexDirection: 'row',
     alignItems: 'center',

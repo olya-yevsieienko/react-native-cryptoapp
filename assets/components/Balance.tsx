@@ -2,29 +2,29 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {COLORS} from '../styles/theme';
 import {portfolio} from '../../data/data';
+import {FONTS_body_2, FONTS_title} from '../styles/styles';
 
 export const Balance = () => {
   return (
     <View style={styles.wrap}>
-      <Text style={{...{textTransform: 'uppercase'}, ...styles.text}}>
-        Current balance
-      </Text>
-      <Text style={{...{fontSize: 44}, ...styles.text}}>
+      <Text style={{...FONTS_title, ...styles.text}}>Current balance</Text>
+      <Text style={{...FONTS_title, ...styles.text, ...{fontSize: 40}}}>
         ${portfolio.balance}
       </Text>
-      <Text style={styles.text}>{portfolio.changes} Last 24 hours</Text>
+      <Text style={{...FONTS_body_2, ...styles.text}}>
+        {portfolio.changes} Last 24 hours
+      </Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   wrap: {
-    marginTop: 4,
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
-    fontFamily: 'montserrat_bold',
+    textTransform: 'uppercase',
     color: COLORS.WHITE,
   },
 });

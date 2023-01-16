@@ -14,9 +14,17 @@ import {Header} from '../components/Header';
 import {History} from '../components/TransactionHistory';
 import {Trending} from '../components/Trending';
 import {SIZE} from '../styles/size';
-import {SHADOW} from '../styles/styles';
+import {
+  FONTS_body_1,
+  FONTS_body_2,
+  FONTS_body_3,
+  FONTS_title,
+  SHADOW,
+  STYLE_app_container,
+} from '../styles/styles';
 import {COLORS} from '../styles/theme';
 import {TransactionHistory} from '../type/TransactionHistory';
+import {CustomButton} from '../ui/CustomButton';
 
 export const Home = () => {
   const [transHistory, setTransHistory] =
@@ -35,12 +43,9 @@ export const Home = () => {
           source={require('../images/bell.png')}
           style={styles.alertIconBell}
         />
-
         <View>
-          <Text style={{fontFamily: 'montserrat_bold', color: COLORS.BLACK}}>
-            Set Price Alert
-          </Text>
-          <Text style={{fontFamily: 'montserrat_regular', fontSize: 12}}>
+          <Text style={FONTS_body_3}>Set Price Alert</Text>
+          <Text style={FONTS_body_2}>
             Get notifed when your coins are moving
           </Text>
         </View>
@@ -57,17 +62,20 @@ export const Home = () => {
     return (
       <View style={{...styles.inviteWrap, ...SHADOW}}>
         <View>
-          <Text style={styles.inviteTitle}>Refer and Earn</Text>
-          <Text style={styles.inviteText}>
+          <Text style={{...FONTS_body_1, ...styles.inviteTitle}}>
+            Refer and Earn
+          </Text>
+          <Text style={{...FONTS_title, ...styles.inviteText}}>
             Refer your Friends and Win Cryptocoins
           </Text>
         </View>
-        <TouchableOpacity
-          onPress={() => console.log('invite')}
-          style={styles.buttonWrap}
-          activeOpacity={0.7}>
-          <Text style={styles.buttonText}>Refer Now</Text>
-        </TouchableOpacity>
+        <CustomButton
+          title={'Refer Now'}
+          bgrColor={COLORS.WHITE}
+          textColor={COLORS.YELLOW}
+          width={'40%'}
+          onPress={() => console.log('Refer Now')}
+        />
         <Image
           source={require('../images/friends.png')}
           style={styles.buttonImage}
@@ -86,7 +94,7 @@ export const Home = () => {
         <Header />
         <Trending />
 
-        <View style={{marginHorizontal: 15}}>
+        <View style={STYLE_app_container}>
           {renderPriceAlert()}
           {renderInviteBlock()}
           {renderTransitionHistory()}
@@ -99,7 +107,6 @@ export const Home = () => {
 const styles = StyleSheet.create({
   homeWrap: {
     flex: 1,
-    paddingBottom: 100,
   },
   alertWrap: {
     marginBottom: 15,
@@ -112,6 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.WHITE,
   },
   alertIconBell: {
+    marginRight: 8,
     width: SIZE.ICON_SIZE,
     height: SIZE.ICON_SIZE,
   },
@@ -127,26 +135,12 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.YELLOW,
   },
   inviteTitle: {
-    marginBottom: 8,
-    fontFamily: 'montserrat_regular',
-    fontSize: 16,
+    marginBottom: SIZE.MARGIN_BOTTOM_TITLE,
     color: COLORS.WHITE,
   },
   inviteText: {
     marginBottom: 20,
-    fontFamily: 'montserrat_bold',
-    fontSize: 20,
     color: COLORS.WHITE,
-  },
-  buttonWrap: {
-    padding: 8,
-    width: '30%',
-    borderRadius: 12,
-    backgroundColor: COLORS.WHITE,
-  },
-  buttonText: {
-    textAlign: 'center',
-    color: COLORS.YELLOW,
   },
   buttonImage: {
     position: 'absolute',

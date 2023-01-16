@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, Text, StyleSheet} from 'react-native';
-import {FONTS_body} from '../styles/styles';
+import {FONTS_body_1} from '../styles/styles';
 
 type Props = {
   title: string;
@@ -26,7 +26,7 @@ export const CustomButton: React.FC<Props> = ({
       }}
       activeOpacity={0.7}
       onPress={onPress}>
-      <Text style={{...styles.text, ...FONTS_body, ...{color: textColor}}}>
+      <Text style={{...styles.text, ...FONTS_body_1, ...{color: textColor}}}>
         {title}
       </Text>
     </TouchableOpacity>

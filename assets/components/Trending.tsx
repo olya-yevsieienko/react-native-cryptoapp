@@ -10,6 +10,8 @@ import {
   View,
 } from 'react-native';
 import {trendingCurrencies} from '../../data/data';
+import {SIZE} from '../styles/size';
+import {FONTS_title} from '../styles/styles';
 import {COLORS} from '../styles/theme';
 import {Currensy} from '../type/Curreny';
 
@@ -36,14 +38,7 @@ export const Trending = () => {
                 style={styles.renderItemIcon}
               />
               <View>
-                <Text
-                  style={{
-                    fontSize: 18,
-                    fontFamily: 'montserrat_bold',
-                    color: COLORS.BLACK,
-                  }}>
-                  {item.currency}
-                </Text>
+                <Text style={FONTS_title}>{item.currency}</Text>
                 <Text style={styles.text}>{item.code}</Text>
               </View>
             </View>
@@ -68,7 +63,7 @@ export const Trending = () => {
 
   return (
     <View style={styles.wrap}>
-      <Text style={{...styles.trendingText, ...styles.text}}>Trending</Text>
+      <Text style={{...FONTS_title, ...styles.trendingText}}>Trending</Text>
       <FlatList
         data={trending.slice(0, 4)}
         renderItem={renderItem}
@@ -83,12 +78,12 @@ export const Trending = () => {
 const styles = StyleSheet.create({
   wrap: {
     position: 'absolute',
-    top: 150,
+    top: 160,
   },
   renderItemWrap: {
     marginBottom: 10,
     width: 180,
-    borderRadius: 22,
+    borderRadius: SIZE.BORDER_RADIUS,
     marginHorizontal: 6,
     backgroundColor: COLORS.WHITE,
     elevation: 8,
@@ -106,14 +101,13 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   renderItemIcon: {
-    marginRight: 20,
+    marginRight: 10,
     width: 40,
     height: 40,
   },
   trendingText: {
     marginBottom: 4,
     marginLeft: 20,
-    fontSize: 18,
     color: COLORS.WHITE,
   },
   text: {
