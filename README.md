@@ -1,5 +1,5 @@
 # React Native Cryptocurrency App
-Cryptocurrency Application is a pet project to get acquainted with the technology React Native.
+Cryptocurrency Application is a pet project to get acquainted with the technology React Native for Android.
 
 You can choose a cryptocurrency, see the price change and the price change chart, transition history, etc.
 
@@ -12,6 +12,6 @@ An app DEMO is below.
 
 ## Screenshots
 
-https://user-images.githubusercontent.com/62176625/212329574-1dfbb141-a333-4069-aab0-c11f96da4742.mov
+https://user-images.githubusercontent.com/62176625/212740560-b2345cc9-a7d4-4adf-bb67-8906a18c45fc.mp4
 
-![screenshots](https://user-images.githubusercontent.com/62176625/212327694-ca3fd5aa-0c10-4c36-90b7-dbdb8efb5ed5.png)
+![screens](https://user-images.githubusercontent.com/62176625/212739438-4bb40290-1379-4401-bfee-eae4dd82f95a.jpg)
